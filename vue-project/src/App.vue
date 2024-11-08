@@ -6,10 +6,15 @@
   <nav>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
-  </nav>
-  <h1>Welcome to your new project!!</h1>
+    <RouterLink to="/login">Login</RouterLink>
 
-  <RouterView />
+    
+  </nav>
+  <main>
+    <RouterView />
+  </main>
+
+  
 </template>
 
 <style>
