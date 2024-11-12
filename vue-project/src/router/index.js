@@ -1,9 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
-import LoginForm from '@/components/LoginForm.vue'
-import ProjectsTable from '@/components/ProjectsTable.vue'
-import MultimeterView from '@/views/MultimeterView.vue'
+
 
 
 const router = createRouter({
@@ -17,22 +14,22 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component: () => import('@/views/AboutView.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginForm
+      component: () => import('@/components/LoginForm.vue')
     },
     {
       path: '/projects',
       name: 'projects',
-      component: ProjectsTable
+      component: () => import('@/components/ProjectsTable.vue')
     },
     {
       path: '/multimeter',
       name: 'multimeter',
-      component: MultimeterView
+      component: () => import('@/views/MultimeterView.vue')
     }
   ],
 })
