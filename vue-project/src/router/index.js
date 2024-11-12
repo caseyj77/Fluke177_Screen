@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import LoginForm from '@/components/LoginForm.vue'
+import ProjectsTable from '@/components/ProjectsTable.vue'
+import MultimeterView from '@/views/MultimeterView.vue'
 
 
 const router = createRouter({
@@ -21,6 +23,16 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginForm
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: ProjectsTable
+    },
+    {
+      path: '/multimeter',
+      name: 'multimeter',
+      component: MultimeterView
     }
   ],
 })

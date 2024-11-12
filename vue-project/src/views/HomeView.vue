@@ -1,12 +1,13 @@
 <script  setup lang="js">
-import DigitalScreen from '@/components/DigitalScreen.vue'
+
 
 </script>
 
 <template>
     <div>
-        <h1>Fluke-177 Digital DigitalScreen</h1> 
+        <h1>Home</h1> 
+        <p>This is the home page we will add more later</p>
     </div>
-    <DigitalScreen />
-    <RouterView />
+    
+    
 </template>
