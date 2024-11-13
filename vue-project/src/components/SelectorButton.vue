@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { ref } from 'vue';
-const modes = ['off', 'hold','on'];
+const modes = ['off', 'VAC', 'VDC','mVDC', 'Ohm']; // will need to add more modes later
 const currentModeIndex = ref(0);
 
 
