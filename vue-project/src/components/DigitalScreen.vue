@@ -1,57 +1,103 @@
 <script setup lang="js">
-import SelectorButton from './SelectorButton.vue';
-let mode = SelectorButton.value;
-console.log(mode)
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  mode: String,
+})
 </script>
 
 <template>
   <div id="fluke-177">
     <div id="digital-screen" class="container">
       <div class="block">
-        <img class='isActive' src="../assets/AUTO with Line.png" width="40px" height="20px">
-        <img src="../assets/HOLD.png" width="40px" height="20px">
-        
+        <img src="../assets/AUTO with Line.png" width="40px" height="20px" />
+        <img src="../assets/HOLD.png" width="40px" height="20px" />
       </div>
       <div class="block">
-        <img src="../assets/MIN.png" width="40px" height="20px">
-        <img src="../assets/MAX.png" width="40px" height="20px">
-        <img src="../assets/MAX-white-bg.png" width="40px" height="20px">
-        <img src="../assets/MIN-white-bg.png" width="40px" height="20px">
-        <img src="../assets/AVG-white-bg.png" width="40px" height="20px">
+        <img src="../assets/MIN.png" width="40px" height="20px" />
+        <img src="../assets/MAX.png" width="40px" height="20px" />
+        <img src="../assets/MAX-white-bg.png" width="40px" height="20px" />
+        <img src="../assets/MIN-white-bg.png" width="40px" height="20px" />
+        <img src="../assets/AVG-white-bg.png" width="40px" height="20px" />
       </div>
       <div class="block">
-        <img src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>nµ</text></svg>" alt="n µ icon">
-        <img src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>°F</text></svg>" alt="F icon">
-        <img src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>°C</text></svg>" alt="C icon">
+        <img
+          src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>nµ</text></svg>"
+          alt="n µ icon"
+        />
+        <img
+          src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>°F</text></svg>"
+          alt="F icon"
+        />
+        <img
+          src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>°C</text></svg>"
+          alt="C icon"
+        />
+      </div>
 
-      </div>
-      
       <div class="block" id="left-center">
-        <img src="../assets/high-voltage-svgrepo-com.svg" width="15px" height="15px">
-        <img src="../assets/negative-sign-svgrepo-com.svg" width="15px" height="15px">
-        <img src="../assets/diode-svgrepo-com.svg" width="15px" height="15px">
-        <img src="../assets/wifi-signal-svgrepo-com.svg" width="15px" height="15px" style="transform: rotate(90deg);">
-        
+        <img src="../assets/high-voltage-svgrepo-com.svg" width="15px" height="15px" />
+        <img src="../assets/negative-sign-svgrepo-com.svg" width="15px" height="15px" />
+        <img src="../assets/diode-svgrepo-com.svg" width="15px" height="15px" />
+        <img
+          src="../assets/wifi-signal-svgrepo-com.svg"
+          width="15px"
+          height="15px"
+          style="transform: rotate(90deg)"
+        />
       </div>
       <div class="block large">5</div>
       <div class="block" id="right-center">
         <div id="row-one">
-          <img src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>m</text></svg>" alt="Mega icon">
-          <img src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>V</text></svg>" alt="Volt icon">
-          <img src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>A</text></svg>" alt="Ampeer icon">
+          <img
+            src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>m</text></svg>"
+            alt="Mega icon"
+          />
+          <img
+            v-show="mode === 'VAC' || mode === 'VDC'"
+            src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>V</text></svg>"
+            alt="Volt icon"
+          />
+          <img
+            src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>A</text></svg>"
+            alt="Ampeer icon"
+          />
         </div>
         <div id="row-two">
-          <img src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>DC</text></svg>" alt="DCicon">
-          <img src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>AC</text></svg>" alt="AC icon">
+          <img
+            v-show="mode === 'VDC'"
+            src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>DC</text></svg>"
+            alt="DCicon"
+          />
+          <img
+            v-show="mode === 'VAC'"
+            src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>AC</text></svg>"
+            alt="AC icon"
+          />
         </div>
         <div id="row-three">
-          <img src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>M</text></svg>" alt="Mega icon">
-          <img src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>k</text></svg>" alt="Kilo Ohm icon">
-          <img src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>Ω</text></svg>" alt="Ohm icon">
+          <img
+            src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>M</text></svg>"
+            alt="Mega icon"
+          />
+          <img
+            src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>k</text></svg>"
+            alt="Kilo Ohm icon"
+          />
+          <img
+            src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>Ω</text></svg>"
+            alt="Ohm icon"
+          />
         </div>
         <div id="row-four">
-          <img src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>k</text></svg>" alt="kilo icon">
-          <img src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>Hz</text></svg>" alt="Hertz icon">
+          <img
+            src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>k</text></svg>"
+            alt="kilo icon"
+          />
+          <img
+            src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>Hz</text></svg>"
+            alt="Hertz icon"
+          />
         </div>
       </div>
 
@@ -85,7 +131,7 @@ console.log(mode)
   border: 1px solid #000;
 }
 
-#left-center{
+#left-center {
   display: grid;
   max-width: 25px;
 }
@@ -102,6 +148,4 @@ console.log(mode)
   justify-content: left;
   min-width: 50px;
 }
-
-
 </style>

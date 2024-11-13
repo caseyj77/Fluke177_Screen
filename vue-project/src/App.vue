@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
@@ -25,7 +25,8 @@ import { RouterLink, RouterView } from 'vue-router';
 
 <style scoped>
 /* Reset for body and container */
-body, .container {
+body,
+.container {
   margin: 0;
   padding: 0;
   display: flex;

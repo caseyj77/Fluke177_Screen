@@ -1,13 +1,8 @@
-<script  setup lang="js">
-
-
-</script>
+<script setup lang="js"></script>
 
 <template>
-    <div>
-        <h1>Home</h1> 
-        <p>This is the home page we will add more later</p>
-    </div>
-    
-    
+  <div>
+    <h1>Home</h1>
+    <p>This is the home page we will add more later</p>
+  </div>
 </template>

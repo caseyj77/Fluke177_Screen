@@ -68,8 +68,8 @@ label {
   margin-bottom: 0.5rem;
 }
 
-input[type="text"],
-input[type="password"] {
+input[type='text'],
+input[type='password'] {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -81,7 +81,7 @@ input[type="password"] {
   padding: 0.7rem;
   border: none;
   border-radius: 4px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   font-size: 1rem;
   cursor: pointer;
