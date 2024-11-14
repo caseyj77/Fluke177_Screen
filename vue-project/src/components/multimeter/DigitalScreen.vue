@@ -1,6 +1,5 @@
 <script setup lang="js">
-import { defineProps } from 'vue'
-
+// eslint-disable-next-line no-unused-vars
 const props = defineProps({
   mode: String,
 })
@@ -10,15 +9,15 @@ const props = defineProps({
   <div id="fluke-177">
     <div id="digital-screen" class="container">
       <div class="block">
-        <img src="../assets/AUTO with Line.png" width="40px" height="20px" />
-        <img src="../assets/HOLD.png" width="40px" height="20px" />
+        <img src="../../assets/multimeter/AUTO with Line.png" width="40px" height="20px" />
+        <img src="../../assets/multimeter/HOLD.png" width="40px" height="20px" />
       </div>
       <div class="block">
-        <img src="../assets/MIN.png" width="40px" height="20px" />
-        <img src="../assets/MAX.png" width="40px" height="20px" />
-        <img src="../assets/MAX-white-bg.png" width="40px" height="20px" />
-        <img src="../assets/MIN-white-bg.png" width="40px" height="20px" />
-        <img src="../assets/AVG-white-bg.png" width="40px" height="20px" />
+        <img src="../../assets/multimeter/MIN.png" width="40px" height="20px" />
+        <img src="../../assets/multimeter/MAX.png" width="40px" height="20px" />
+        <img src="../../assets/multimeter/MAX-white-bg.png" width="40px" height="20px" />
+        <img src="../../assets/multimeter/MIN-white-bg.png" width="40px" height="20px" />
+        <img src="../../assets/multimeter/AVG-white-bg.png" width="40px" height="20px" />
       </div>
       <div class="block">
         <img
@@ -36,15 +35,11 @@ const props = defineProps({
       </div>
 
       <div class="block" id="left-center">
-        <img src="../assets/high-voltage-svgrepo-com.svg" width="15px" height="15px" />
-        <img src="../assets/negative-sign-svgrepo-com.svg" width="15px" height="15px" />
-        <img src="../assets/diode-svgrepo-com.svg" width="15px" height="15px" />
+        <img src="../../assets/multimeter/high-voltage-svgrepo-com.svg" width="15px" height="15px" />
+        <img src="../../assets/multimeter/negative-sign-svgrepo-com.svg" width="15px" height="15px" />
+        <img src="../../assets/multimeter/diode-svgrepo-com.svg" width="15px" height="15px" />
         <img
-          src="../assets/wifi-signal-svgrepo-com.svg"
-          width="15px"
-          height="15px"
-          style="transform: rotate(90deg)"
-        />
+          src="../../assets/multimeter/wifi-signal-svgrepo-com.svg" width="15px" height="15px" style="transform: rotate(90deg)"/>
       </div>
       <div class="block large">5</div>
       <div class="block" id="right-center">
@@ -54,7 +49,7 @@ const props = defineProps({
             alt="Mega icon"
           />
           <img
-            v-show="mode === 'VAC' || mode === 'VDC'"
+            :style="{ visibility: mode === 'VAC' || mode === 'VDC' ? 'visible' : 'hidden' }"
             src="data:image/svg+xml;utf8,<svg width='10px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>V</text></svg>"
             alt="Volt icon"
           />
@@ -65,12 +60,12 @@ const props = defineProps({
         </div>
         <div id="row-two">
           <img
-            v-show="mode === 'VDC'"
+            :style="{ visibility: mode === 'VDC' ? 'visible' : 'hidden' }"
             src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>DC</text></svg>"
             alt="DCicon"
           />
           <img
-            v-show="mode === 'VAC'"
+            :style="{ visibility: mode === 'VAC' ? 'visible' : 'hidden' }"
             src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>AC</text></svg>"
             alt="AC icon"
           />
