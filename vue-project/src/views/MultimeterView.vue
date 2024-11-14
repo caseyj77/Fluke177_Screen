@@ -22,3 +22,5 @@ function handleModeChange(newMode) {
     <SelectorButton @modeChanged="handleModeChange" />
   </div>
 </template>
+
+

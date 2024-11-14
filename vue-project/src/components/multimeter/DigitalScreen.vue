@@ -35,13 +35,19 @@ const props = defineProps({
       </div>
 
       <div class="block" id="left-center">
-        <img src="../../assets/multimeter/high-voltage-svgrepo-com.svg" width="15px" height="15px" />
-        <img src="../../assets/multimeter/negative-sign-svgrepo-com.svg" width="15px" height="15px" />
-        <img src="../../assets/multimeter/diode-svgrepo-com.svg" width="15px" height="15px" />
+        <img 
+          src="../../assets/multimeter/high-voltage-svgrepo-com.svg" width="15px" height="15px" 
+          />
+        <img 
+          src="../../assets/multimeter/negative-sign-svgrepo-com.svg" width="15px" height="15px" 
+          />
+        <img 
+          src="../../assets/multimeter/diode-svgrepo-com.svg" width="15px" height="15px" 
+          />
         <img
           src="../../assets/multimeter/wifi-signal-svgrepo-com.svg" width="15px" height="15px" style="transform: rotate(90deg)"/>
       </div>
-      <div class="block large">5</div>
+      <div class="block large" id="center-center">0.0125</div>
       <div class="block" id="right-center">
         <div id="row-one">
           <img
@@ -80,6 +86,7 @@ const props = defineProps({
             alt="Kilo Ohm icon"
           />
           <img
+            :style="{ visibility: mode === 'Ohm' ? 'visible' : 'hidden' }"
             src="data:image/svg+xml;utf8,<svg width='15px' height='15px' xmlns='http://www.w3.org/2000/svg'><text x='0' y='12' font-size='12' fill='black'>Ω</text></svg>"
             alt="Ohm icon"
           />
@@ -104,7 +111,6 @@ const props = defineProps({
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 #digital-screen {
   display: grid;
@@ -142,5 +148,14 @@ const props = defineProps({
   align-items: right;
   justify-content: left;
   min-width: 50px;
+}
+
+#center-center {
+  font-family: monospace;
+  
+}
+
+img {
+  visibility: hidden;
 }
 </style>
