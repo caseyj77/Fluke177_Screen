@@ -15,6 +15,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <aside>
       <RouterLink to="/projects">Projects</RouterLink>
       <RouterLink to="/multimeter">Multimeter</RouterLink>
+      <RouterLink to="/schematic">Schematic</RouterLink>
     </aside>
 
     <main>
@@ -73,10 +74,10 @@ aside {
 }
 /* Main content styling */
 main {
-  margin-left: 75px; /* Offset main content to account for aside width */
-  padding: 1rem;
+  margin-left: 65px; /* Offset main content to account for aside width */
+  padding: .5rem;
   flex: 1;
-  margin-top: 64px; /* Offset to match header height */
+  margin-top: 40px; /* Offset to match header height */
 }
 
 /* Link styling */

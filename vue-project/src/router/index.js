@@ -29,6 +29,11 @@ const router = createRouter({
       name: 'multimeter',
       component: () => import('@/views/MultimeterView.vue'),
     },
+    {
+      path: '/schematic',
+      name: 'schematic',
+      component: () => import('@/views/SchematicMakerView.vue'),
+    }
   ],
 })
 
